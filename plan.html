@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기획서 — 합의서 · 인보이스 자동 작성</title>
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.plan-figs figure{margin:0 0 22px;} .plan-figs img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.plan-figs figcaption{font-size:13px;color:var(--sub);text-align:center;margin-top:6px;}
+.plan td{white-space:normal;} .plan td .btn{min-height:36px;white-space:nowrap;}
+h3{font-size:15px;margin:16px 0 6px;} main ul{margin:0 0 10px 20px;}
+:root{--ink:#152232;--sub:#5b6b7b;--line:#d8e0e8;--brand:#154b6e;--bg:#f5f7fa;--container-pad:20px}
+@media (min-width:640px){:root{--container-pad:28px}} @media (min-width:1024px){:root{--container-pad:40px}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--brand)} .wrap,.topnav-inner{max-width:calc(1100px + 2*var(--container-pad));margin:0 auto;padding:0 var(--container-pad)}
+.topnav{background:#0d3350;color:#fff;position:sticky;top:0;z-index:5} .topnav-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;min-height:56px}
+.topnav-brand{color:#fff;text-decoration:none;font-weight:700} .topnav-brand small{font-weight:400;opacity:.75;margin-left:6px}
+.topnav-links{list-style:none;display:flex;gap:4px;margin:0;padding:0} .topnav-links a{color:#dbe7f0;text-decoration:none;padding:8px 12px;border-radius:8px;display:block} .topnav-links a.active,.topnav-links a:hover{background:rgba(255,255,255,.14);color:#fff}
+.hero{background:linear-gradient(180deg,#154b6e,#0d3350);color:#fff;padding:40px 0 36px} .hero h1{margin:6px 0 10px;font-size:clamp(24px,3.4vw,34px);color:#fff} .hero p{margin:0;opacity:.9;max-width:860px} .eyebrow{font-size:13px;opacity:.8}
+main{padding:28px 0 40px} .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 20px} .sub{color:var(--sub)}
+.tablewrap{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:14.5px} th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top} th{background:#eef3f7;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:6px 14px;border-radius:8px;border:1px solid var(--brand);text-decoration:none;font-weight:600} .btn.primary{background:var(--brand);color:#fff}
+footer{border-top:1px solid var(--line);padding:20px 0 28px;color:var(--sub);font-size:13.5px}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="주요 메뉴">
+  <div class="topnav-inner">
+    <a class="topnav-brand" href="index.html">합의서 · 인보이스 자동 작성 <small>data10-15 · 기획 안민준</small></a>
+    <ul class="topnav-links">
+      <li><a href="index.html">도구</a></li>
+      <li><a href="plan.html" class="active" aria-current="page">기획서</a></li>
+    </ul>
+  </div>
+</nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">현장 데이터 디지털화 전문가과정 · 2차수 · 프로젝트 15 · 기획서 v2.0</div>
+  <h1>합의서 · 인보이스 자동 작성 기획서</h1>
+  <p>협력사와 보상 합의를 마친 결과 엑셀을 올리면 협력사별로 묶어 금액을 검증하고, 회사 합의서 · 인보이스 엑셀 양식의 {{키}} 칸을 채워 서식 그대로의 엑셀과 인쇄용 PDF 를 만드는 도구입니다.</p>
+</div></header>
+<main><div class="wrap">
+<div class="card">
+  <h2 style="margin-top:0">기획서 내려받기</h2>
+  <p class="sub">파이프라인 · 아키텍처 · 와이어프레임 · 개발일지가 들어간 워드 문서입니다. 버전마다 따로 남깁니다.</p>
+  <div class="tablewrap plan"><table><thead><tr><th>버전</th><th>날짜</th><th>바뀐 점</th><th>파일</th></tr></thead><tbody><tr><td><b>v2.0</b></td><td>2026-11-10</td><td>최종 기획서 — 파이프라인 · 아키텍처 · 와이어프레임 정리 / 로그인 · 사용 신청 · 관리자 승인(요청자 Supabase 로 옮길 수 있게) / 로그인 전 대문</td><td><a class="btn primary" href="docs/기획서/data10-15_안민준_합의서인보이스자동작성_기획서_v2.0.docx" download>워드 내려받기</a></td></tr></tbody></table></div>
+</div>
+<div class="card plan">
+  <h2 style="margin-top:0">요구사항과 구현</h2>
+  <div class="tablewrap"><table><thead><tr><th>기획서 요구</th><th>구현</th></tr></thead><tbody><tr><td>합의 Excel 업로드 → 협력사 정보 · 클레임별 합의금액 자동 추출</td><td>머리행 자동 인식 · 열 이름 별칭 · 열 연결 화면 · 합계 줄 건너뛰기, 협력사(코드 우선)별 묶기</td></tr><tr><td>기존 지정 양식에 맞춰 문서 자동 작성</td><td>양식에 {{키}} 를 적어 올리면 서식(글꼴 · 테두리 · 병합 · 직인 그림) 그대로 값만 채움, 반복 줄 · 합계 범위 늘리기</td></tr><tr><td>합의서 · 인보이스 각각 Excel 다운로드</td><td>한 개 또는 zip 한 파일(한글 이름), 문서 번호 자동 채번 · 발행 이력</td></tr><tr><td>합의서 · 인보이스 PDF 다운로드</td><td>인쇄용 기본 양식 → 브라우저 「PDF로 저장」. 회사 양식 그대로의 PDF 자동 변환은 2단계</td></tr><tr><td>수작업 입력 오류 최소화</td><td>합의 &gt; 청구 · 금액 없음 · 비율 범위 · 통화 섞임(확인 필요), 비율 계산과 다름 · 번호 겹침(주의), 한글 금액 · 합계 자동</td></tr><tr><td>결재 · 메일 발송 · 팀 공유</td><td>2단계 — 지금은 브라우저 저장 + JSON 백업</td></tr></tbody></table></div>
+</div>
+<div class="card plan-figs"><h2 style="margin-top:0">그림으로 보기</h2><figure><img src="docs/img/pipeline.png" alt="처리 흐름(파이프라인)" loading="lazy"><figcaption>처리 흐름(파이프라인)</figcaption></figure><figure><img src="docs/img/architecture.png" alt="구성(아키텍처)" loading="lazy"><figcaption>구성(아키텍처)</figcaption></figure><figure><img src="docs/img/wireframe-1.png" alt="와이어프레임 — 로그인 전 대문" loading="lazy"><figcaption>와이어프레임 — 로그인 전 대문</figcaption></figure><figure><img src="docs/img/wireframe-2.png" alt="와이어프레임 — ① 협력사별 합의" loading="lazy"><figcaption>와이어프레임 — ① 협력사별 합의</figcaption></figure><figure><img src="docs/img/wireframe-3.png" alt="와이어프레임 — ③ 문서 만들기 · ⑤ 양식 템플릿" loading="lazy"><figcaption>와이어프레임 — ③ 문서 만들기 · ⑤ 양식 템플릿</figcaption></figure><figure><img src="docs/img/screen.png" alt="실제 화면(예제 데이터)" loading="lazy"><figcaption>실제 화면(예제 데이터)</figcaption></figure></div>
+<div class="card"><h2 style="margin-top:0">개발일지</h2><h3>2026-11-10 · 최종 기획서 · 로그인 · 대문</h3><ul><li>로그인 · 사용 신청 · 관리자 승인 키트(회원 표 data1015_members)</li><li>로그인 전 대문 문구를 기획서의 핵심 기능 · 처리 흐름에서</li><li>최종 기획서 v2.0(워드 · plan.html · 그림 · CHANGELOG), README 정리</li><li>시험 32개 통과, 이전 점검 통과</li></ul><h3>2026-10-27 · 판 맞추기</h3><ul><li>index.html 의 ?v= · 계산 파일 판을 함께 올리고, 섞이면 「새 판이 나왔습니다」로 멈춤</li><li>배포 직후 옛 화면을 막는 fresh-guard</li></ul><h3>2026-10-21 · 기획서 정리 · 1단계</h3><ul><li>가상 합의 결과 22행(협력사 6곳) · 가상 기본 양식 2종</li><li>xlsx 안 시트 XML 을 직접 고쳐 서식 그대로 채우기, 반복 줄 · 합계 범위 · 직인 위치</li><li>문서 번호 · 재발행 · 발행 이력, 인쇄용 PDF, 한글 이름 zip</li><li>로직 검사 31 · 브라우저 점검 40</li></ul></div>
+</div></main>
+<footer><div class="wrap">현장 데이터 디지털화 전문가과정 · 2차수 · 프로젝트 15 · 기획 안민준 · <a href="https://data10-00.jobability.co.kr/">2차수 프로젝트 모음</a></div></footer>
+</body>
+</html>
