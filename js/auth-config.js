@@ -8,6 +8,7 @@ window.AUTH_CONFIG = {
   "kakao": true,
   "idleMinutes": 30,
   "localBypass": true,
+  "board": true,
   "site": {
     "title": "합의서 · 인보이스 자동 작성",
     "summary": "협력사와 보상 합의를 마친 결과 엑셀을 올리면 협력사별로 묶어 금액을 검증하고, 회사 합의서 · 인보이스 엑셀 양식의 {{키}} 칸을 채워 서식 그대로의 엑셀과 인쇄용 PDF 를 만드는 도구입니다.",
@@ -185,7 +186,8 @@ window.AUTH_CONFIG = {
         "brand": "#2c58c4",
         "brandDark": "#2347a0",
         "accent": "#9db8ff"
-      }
+      },
+      "heroMode": "design"
     }
   }
 };
